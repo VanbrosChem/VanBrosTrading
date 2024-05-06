@@ -1,38 +1,44 @@
 import React from 'react';
-import '../css/carousel.css';
-function Carousel() {
-    return (
-        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777"/>
-                    </svg>
-                    <div className="container">
-                        <div className="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-                            <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-                {/* More carousel items */}
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-            </button>
-        </div>
-    );
-}
+import { Carousel } from 'react-bootstrap';
 
-export default Carousel;
+const MyCarousel: React.FC = () => {
+    return (
+        <Carousel>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="building.jpg"
+                    alt="First slide"
+                />
+                <Carousel.Caption className="text-container">
+                    <h1><strong>Van Bros Trading</strong></h1>
+                    <h2><strong>The state-of-the-art chemical products.</strong></h2>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="office.png"
+                    alt="Second slide"
+                />
+                <Carousel.Caption className="text-container">
+                    <h2 className="bold-text">FOUNDED IN 2020 IN VANCOUVER, BC.</h2>
+                    <p className="bold-text">Our main services are selling chemical products, particularly Methyl methacrylate (MMA) and Poly (methyl methacrylate) (PMMA).</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src="factory.jpg"
+                    alt="Third slide"
+                />
+                <Carousel.Caption className="text-container">
+                    <h2 className="bold-text">Factories in China</h2>
+                    <p className="bold-text">With our exclusive suppliers and manufacturers in China mainland, we provide our customers with competitive, reliable chemical sources.</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
+    );
+};
+
+export default MyCarousel;
