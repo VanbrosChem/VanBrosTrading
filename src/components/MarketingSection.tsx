@@ -19,3 +19,5 @@ function MarketingSection() {
     </div>
   );
 }
+
+export default MarketingSection;
